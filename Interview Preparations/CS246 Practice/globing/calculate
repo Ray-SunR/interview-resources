@@ -1,0 +1,21 @@
+#!/bin/bash
+
+usage()
+{
+	echo "${0} : number" 1>2&
+}
+
+if [ ${#} -gt 1 ]; then
+	usage
+fi
+
+num=${1}
+result=0
+
+while [ ${num} -ge 0 ]; do
+	echo "${num}"
+	echo "+"
+	result=$((num + result))
+	num=$((num - 1))
+done
+echo ${result}
